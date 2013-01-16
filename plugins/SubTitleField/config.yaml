@@ -16,14 +16,15 @@ settings:
         default: >
             <div id="title-field" class="field field-no-header ">
                 <div class="field-header">
-                    <label id="title-label" for="title">タイトル</label>
+                    <label id="title-label" for="title"><__trans phrase="Title"></label>
                 </div>
                 <div class="field-content ">
-                    <input type="text" name="title" id="title" class="title text full" value="" placeholder="タイトル" maxlength="255" mt:watch-change="1" />
+                    <input type="text" name="title" id="title" class="title text full" value="" placeholder="<__trans phrase="Title">" maxlength="255" mt:watch-change="1" />
                 </div>
             <__trans_section component="SubTitleField">
-            <div style="margin-top:4px;font-size:90%"><__trans phrase="Sub Title"></div>
-            <input type="text" class="text" name="subtitle" value="<mt:var name="subtitle" escape="html">" />
+            <div style="margin-top:8px">
+            <input type="text" placeholder="<__trans phrase="Sub Title">" class="text" name="subtitle" value="<mt:var name="subtitle" escape="html">" />
+            </div>
             </__trans_section>
             </div>
     subtitlefield_entry:
