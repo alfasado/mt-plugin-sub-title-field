@@ -1,0 +1,41 @@
+name: SubTitleField
+id:   SubTitleField
+key:  subtitlefield
+version: 0.3
+schema_version: 0.2
+author_link: https://alfasado.net/
+author_name: Alfasado Inc.
+l10n_class: SubTitleField::L10N
+description: <__trans phrase="Add entry's sub-title field.">
+object_types:
+    entry:
+        subtitle: text(255) revisioned
+blog_config_template: subtitlefield_cfg.tmpl
+settings:
+    subtitlefield_text:
+        default: >
+            <div id="title-field" class="field field-no-header ">
+                <div class="field-header">
+                    <label id="title-label" for="title">タイトル</label>
+                </div>
+                <div class="field-content ">
+                    <input type="text" name="title" id="title" class="title text full" value="" placeholder="タイトル" maxlength="255" mt:watch-change="1" />
+                </div>
+            <__trans_section component="SubTitleField">
+            <div style="margin-top:4px;font-size:90%"><__trans phrase="Sub Title"></div>
+            <input type="text" class="text" name="subtitle" value="<mt:var name="subtitle" escape="html">" />
+            </__trans_section>
+            </div>
+    subtitlefield_entry:
+        default: 1
+    subtitlefield_page:
+        default: 0
+callbacks:
+    MT::App::CMS::template_param.edit_entry: $subtitlefield::SubTitleField::Plugin::_cb_tpl_pram_edit_entry
+tags:
+    function:
+        EntrySubTitle: $subtitlefield::SubTitleField::Plugin::_hdlr_entry_subtitle
+    filters:
+        Entries:
+            subtitle:
+                handler: $subtitlefield::SubTitleField::Plugin::_filter_subtitle

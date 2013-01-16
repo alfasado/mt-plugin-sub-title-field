@@ -1,0 +1,29 @@
+<mtapp:setting
+    id="subtitlefield_text"
+    label="<__trans phrase="Field HTML">">
+<ul>
+<li><textarea rows="10" class="text low" name="subtitlefield_text" id="subtitlefield_text"><mt:var name="subtitlefield_text" escape="html"></textarea></li>
+</ul>
+</mtapp:setting>
+<mtapp:setting
+    id="subtitlefield_entry"
+    label="<__trans phrase="Entry">">
+<ul>
+<li>
+<input type="checkbox" name="subtitlefield_entry" value="1" <mt:if name="subtitlefield_entry">checked="checked"</mt:if> />
+<__trans phrase="Active">
+</li>
+</ul>
+<input type="hidden" name="subtitlefield_entry" value="0" />
+</mtapp:setting>
+<mtapp:setting
+    id="subtitlefield_page"
+    label="<__trans phrase="Page">">
+<ul>
+<li>
+<input type="checkbox" name="subtitlefield_page" value="1" <mt:if name="subtitlefield_page">checked="checked"</mt:if> />
+<__trans phrase="Active">
+</li>
+</ul>
+<input type="hidden" name="subtitlefield_page" value="0" />
+</mtapp:setting>
