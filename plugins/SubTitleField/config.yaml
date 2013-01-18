@@ -1,7 +1,7 @@
 name: SubTitleField
 id:   SubTitleField
 key:  subtitlefield
-version: 0.3
+version: 0.4
 schema_version: 0.2
 author_link: https://alfasado.net/
 author_name: Alfasado Inc.
@@ -19,7 +19,7 @@ settings:
                     <label id="title-label" for="title"><__trans phrase="Title"></label>
                 </div>
                 <div class="field-content ">
-                    <input type="text" name="title" id="title" class="title text full" value="" placeholder="<__trans phrase="Title">" maxlength="255" mt:watch-change="1" />
+                    <input type="text" name="title" id="title" class="title text full" value="<mt:var name="title" escape="html">" placeholder="<__trans phrase="Title">" maxlength="255" mt:watch-change="1" />
                 </div>
             <__trans_section component="SubTitleField">
             <div style="margin-top:8px">
@@ -40,3 +40,9 @@ tags:
         Entries:
             subtitle:
                 handler: $subtitlefield::SubTitleField::Plugin::_filter_subtitle
+list_properties:
+    entry:
+        subtitle:
+            auto: 1
+            label: Sub Title
+            order: 220
